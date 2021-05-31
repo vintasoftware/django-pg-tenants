@@ -37,8 +37,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'django-tenant-schema'
-copyright = '%d, Bernardo Pires Carneiro' % datetime.date.today().year
+project = 'django-pg-tenants'
+copyright = '%d, Vinta Software' % datetime.date.today().year
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
