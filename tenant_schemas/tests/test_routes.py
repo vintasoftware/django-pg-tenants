@@ -19,7 +19,6 @@ class MissingDefaultTenantMiddleware(DefaultTenantMiddleware):
     DEFAULT_SCHEMA_NAME = "missing"
 
 
-@unittest.skipIf(six.PY2, "Unexpectedly failing only on Python 2.7")
 class RoutesTestCase(BaseTestCase):
     @classmethod
     def setUpClass(cls):
