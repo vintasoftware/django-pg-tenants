@@ -6,9 +6,6 @@ python:
   - 3.7
 
 matrix:
-  include:
-    - python: 2.7
-      env: DJANGO=1.11
   fast_finish: true
 
 services:
@@ -21,7 +18,7 @@ install:
   - pip install -q tox-travis
 
 before_script:
-  - psql -c "CREATE DATABASE dts_test_project;" -U postgres
+  - psql -c "CREATE DATABASE dpt_test_project;" -U postgres
 
 script:
   - tox
@@ -35,22 +32,11 @@ env:
 
 deploy:
   provider: pypi
-  user: bcarneiro
+  user: vintasoftware
   password:
-    secure: "IJ23U+zTqDmHB8aB8GEhAAZRzOx5CorPe4Mi6KEyafuALWsY5CB95sN24Il\
-             01rhPX+3a88krwu+XNhsjEOVjNn4FE1sEiqO15p7hvIh5sj8JxjVqFvU58r\
-             ScFTsvYIw4DwvO7cZSOQhFihEHtQRHbWd8b95GGqwRjh2yN1HzMsgOrptQC\
-             0Op038S4pSeFRGINj1HJbj320ctbLJoP9GBROpMJ71GR2V2RnTunxcMmlx4\
-             yVYEIHS1JijcDQ2BlG8ZikIVfeKqoipzd592Sq2JUuhPgL2MMeI8onHFGRJ\
-             qUJv3elXev4qcXSqclQtGyTOewB5YZBHrqj3Pg134RmiOxapNWe0HaLPjsr\
-             flviJuZepU1ETh6epjcbZi4vl32MCQF/v1nhezoP4BLijJWstKmgmwXuFoD\
-             ra6niUPcU97e1o5OnFkySlV9IcH+vrAo+sNGt0ztRen3zU+cab8ff0CnH1M\
-             e23Tzf3H6gkZCaHlol0xB5u75+5QSpgNAlgQfcbpZVqYsRPpCf61qJixfy/\
-             QPBydAWQ5uwG6KzgGTffAmAj4WOa3/n+19jsPNS6h0+VNEgRnoGfIzckQ/h\
-             rOV9wPIJ5oJ99SNYLnQ4SLl3JqqttryEHyBSRdYQ7wn3pb9oPfq58/47f/N\
-             TPNZRAsemVEx+9udm25+AtEAtS3OB6sQgQ="
+    secure: "n9jzkRpSQmvbuYixGOcGHvDxqLgLGcN4r7LiAt/uSqXCaUM83n1nJ9SLix27qJarY4PY2uC8zHmAxpK6Vns178gtN/mOlS0RntFZMO2HROSogLMRWoTreic27Ek3N+CXseTM8EKW3qDew0BtWc2NnAz6J8WqAvkk+ehkXlDbauSUqQ7HcrqlKgG5unBHAHrxz5+gEGINM/vy5vmSZYVedhxxF86IRd4AZYgD2crNcPIdfZ8AyO5qmcsTSkMwsUkW8Crq3CKDF43vfKbtPPe+mGv3Mjnbex9SRvYsKZnksqghdnbH5NMrMsimeCCP6Te+S1E8Wcqc3Aek95uubqSB3ZdAOVdnGTjCIiCcgiuLMbSvkgW69XFFZvxZXwxJSQjl3R87lCWBwA/9/ZlSXdYME2XivpTeRldG9zxq7bJLyRM7jkyUucABkLqVDnbakXoo5ZuHdA8cmf7qbRKEIQD0txxmTk9qTIjovpkpPOnizDgh5oInSRMAu0JwLtY0lpbb7mp7Y07O2XXy5uuXcQV56k5sRBz5hTo3TyCXZ9v6OpO/8vZu+HcQIf0lSF1a8b1HQzoqiP/NbCddgZmFeWSekUMXA1rM7B+4T7vvxzs4dVKhHFWllRtSLqf87Dj1zz7k9uqWdJNQMugNs71Gr9ND29k1fauOmqZtY+iGpnUZ2/s="
   on:
     distributions: sdist bdist_wheel
-    repo: bernardopires/django-tenant-schemas
+    repo: vintasoftware/django-pg-tenants
     tags: true
     skip_existing: true

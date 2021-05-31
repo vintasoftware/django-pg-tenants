@@ -19,14 +19,13 @@ class MissingDefaultTenantMiddleware(DefaultTenantMiddleware):
     DEFAULT_SCHEMA_NAME = "missing"
 
 
-@unittest.skipIf(six.PY2, "Unexpectedly failing only on Python 2.7")
 class RoutesTestCase(BaseTestCase):
     @classmethod
     def setUpClass(cls):
         super(RoutesTestCase, cls).setUpClass()
         settings.SHARED_APPS = ("tenant_schemas",)
         settings.TENANT_APPS = (
-            "dts_test_app",
+            "dpt_test_app",
             "django.contrib.contenttypes",
             "django.contrib.auth",
         )

@@ -8,18 +8,13 @@ from django.conf import settings
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('dts_test_app', '0003_test_add_db_index'),
+        ('dpt_test_app', '0002_test_drop_unique'),
     ]
 
     operations = [
-        migrations.AlterField(
+        migrations.AddField(
             model_name='DummyModel',
             name='indexed_value',
-            field=models.CharField(max_length=255, unique=True),
-        ),
-
-        migrations.RemoveField(
-            model_name='DummyModel',
-            name='indexed_value',
+            field=models.CharField(max_length=255, db_index=True),
         ),
     ]
