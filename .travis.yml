@@ -14,21 +14,31 @@ services:
   - postgresql
 
 addons:
-  postgresql: "12.7"
+  postgresql: "12"
+  apt:
+    packages:
+      - postgresql-12
+      - postgresql-client-12
+      - postgresql-server-dev-12
+
 
 install:
   - pip install -q tox-travis
 
 before_script:
-  - psql -c "CREATE DATABASE dpt_test_project;" -U postgres
+  - psql -c "CREATE DATABASE dpt_test_project;" -U travis
 
 script:
   - tox
 
 env:
-  - DJANGO=2.2
-  - DJANGO=3.1
-  - DJANGO=3.2
+  global:
+    - PGPORT=5433
+    - PGUSER=travis
+  jobs:
+    - DJANGO=22
+    - DJANGO=31
+    - DJANGO=32
 
 deploy:
   provider: pypi

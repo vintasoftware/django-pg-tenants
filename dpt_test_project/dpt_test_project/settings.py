@@ -65,11 +65,11 @@ WSGI_APPLICATION = "dpt_test_project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "tenant_schemas.postgresql_backend",
-        "NAME": os.environ.get("PG_NAME", "dpt_test_project"),
-        "USER": os.environ.get("PG_USER"),
-        "PASSWORD": os.environ.get("PG_PASSWORD"),
-        "HOST": os.environ.get("PG_HOST"),
-        "PORT": int(os.environ.get("PG_PORT")) if os.environ.get("PG_PORT") else None,
+        "NAME": os.environ.get("PGNAME", "dpt_test_project"),
+        "USER": os.environ.get("PGUSER"),
+        "PASSWORD": os.environ.get("PGPASSWORD"),
+        "HOST": os.environ.get("PGHOST"),
+        "PORT": int(os.environ.get("PGPORT")) if os.environ.get("PG PORT") else None,
     }
 }
 
