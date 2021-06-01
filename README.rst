@@ -210,6 +210,6 @@ tenant specific apps. Complete instructions can be found at
 .. |Python versions| image:: https://img.shields.io/pypi/pyversions/django-pg-tenants.svg
 .. |Travis CI| image:: https://travis-ci.org/vintasoftware/django-pg-tenants.svg?branch=master
    :target: https://travis-ci.org/vintasoftware/django-pg-tenants
-.. |PostgreSQL| image:: https://img.shields.io/badge/PostgreSQL-9.2%2C%209.3%2C%209.4%2C%209.5%2C%209.6-blue.svg
+.. |PostgreSQL| image:: https://img.shields.io/badge/PostgreSQL-12.7-blue.svg
 .. _setup: https://django-pg-tenants.readthedocs.io/en/latest/install.html
 .. _django-pg-tenants.readthedocs.io: https://django-pg-tenants.readthedocs.io/en/latest/
