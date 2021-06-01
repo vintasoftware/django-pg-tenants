@@ -1,53 +1,42 @@
 language: python
 cache: pip
-
 python:
-  - 3.6
-  - 3.7
-  - 3.8
-  - 3.9
-
+- 3.6
+- 3.7
+- 3.8
+- 3.9
 matrix:
   fast_finish: true
-
 services:
-  - postgresql
-
+- postgresql
 addons:
-  postgresql: "12"
+  postgresql: '12'
   apt:
     packages:
-      - postgresql-12
-      - postgresql-client-12
-      - postgresql-server-dev-12
-
-
+    - postgresql-12
+    - postgresql-client-12
+    - postgresql-server-dev-12
 install:
-  - pip install -q tox-travis
-
+- pip install -q tox-travis
 before_script:
-  - psql -c "CREATE DATABASE dpt_test_project;" -U travis
-
+- psql -c "CREATE DATABASE dpt_test_project;" -U travis
 script:
-  - tox
-
+- tox
 env:
   global:
-    - PGPORT=5433
-    - PGUSER=travis
+  - PGPORT=5433
+  - PGUSER=travis
   jobs:
-    - DJANGO=22
-    - DJANGO=31
-    - DJANGO=32
-
+  - DJANGO=22
+  - DJANGO=31
+  - DJANGO=32
 deploy:
   provider: pypi
   user: vintasoftware
   password:
-    secure: "n9jzkRpSQmvbuYixGOcGHvDxqLgLGcN4r7LiAt/uSqXCaUM83n1nJ9SLix27qJarY4PY2uC8zHmAxpK6Vns178gtN/mOlS0RntFZMO2HROSogLMRWoTreic27Ek3N+CXseTM8EKW3qDew0BtWc2NnAz6J8WqAvkk+ehkXlDbauSUqQ7HcrqlKgG5unBHAHrxz5+gEGINM/vy5vmSZYVedhxxF86IRd4AZYgD2crNcPIdfZ8AyO5qmcsTSkMwsUkW8Crq3CKDF43vfKbtPPe+mGv3Mjnbex9SRvYsKZnksqghdnbH5NMrMsimeCCP6Te+S1E8Wcqc3Aek95uubqSB3ZdAOVdnGTjCIiCcgiuLMbSvkgW69XFFZvxZXwxJSQjl3R87lCWBwA/9/ZlSXdYME2XivpTeRldG9zxq7bJLyRM7jkyUucABkLqVDnbakXoo5ZuHdA8cmf7qbRKEIQD0txxmTk9qTIjovpkpPOnizDgh5oInSRMAu0JwLtY0lpbb7mp7Y07O2XXy5uuXcQV56k5sRBz5hTo3TyCXZ9v6OpO/8vZu+HcQIf0lSF1a8b1HQzoqiP/NbCddgZmFeWSekUMXA1rM7B+4T7vvxzs4dVKhHFWllRtSLqf87Dj1zz7k9uqWdJNQMugNs71Gr9ND29k1fauOmqZtY+iGpnUZ2/s="
+    secure: roK/f00ntmwhn2NROdOO8ICfhumw1FwpJxzWChW5XijgD/73vsSyqgCTjWwNCDny2DQt+/ggV5eyF/AF0CqHQL21VgBB4V10JEHfH2dRhhN27JORkdSRTyI1lUqFwWNr91h6it3h3/Dg1ws9Ycdx4WC4RNMZDRRa08Ew+i0Wqu8tqJPG5mgnyzBwG4B4pYkd+gqjoNJQUo1A8mPsfDH1bnfqBR9mXoNPIcXBU8SPFEQwrA83TOOZk+CckIayJ57yf0CwBk+oFhAwCpSpT760/oP3w9tuxmxX/y3Ao/lExVTTneXTsKO+tVnluNSjguLkhmFitLVZFOZvLq9z4AZHgaE/AlJDDeOiPirrd2s+7YLSalYJsLLaElDs0U8qc77uBa3pvKUeDrYgp+eQ7atXDivRY1OOxjhLruHfk3HMlVXFzoETD5mCMs3qD3qKrNuUoc+J7E8zhpe71nGr7DWYRrtTSbzZgP4XASPdcg7rhGGU2mH99pp9VaueZKXbikS2ySQ5xFlaJuoF3ojl+spRSFaqvSaRZzhoQ9HGc4pD+JToBsDNohBtP1rs6E04M0NxhDK6KeldB9JK3SuEyJt+DaKArYP6tLxk0dl8BPrgqmj9Jdc0nNSlMvMvGnSGEzpuPlcjPuQ4VvjdFDQKbINaQ7p7r4IfLHLjG3iEo5uGoRo=
   on:
     distributions: sdist bdist_wheel
     repo: vintasoftware/django-pg-tenants
     tags: true
     skip_existing: true
-    skip_cleanup: true
