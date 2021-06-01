@@ -3,7 +3,7 @@ django-pg-tenants
 
 |PyPi version| |PyPi downloads| |Python versions| |Travis CI| |PostgreSQL|
 
-This is a fork of [django-tenant-schemas](https://github.com/bernardopires/django-tenant-schemas).
+This is a fork of `django-tenant-schemas`_.
 
 This application enables `django`_ powered websites to have multiple
 tenants via `PostgreSQL schemas`_. A vital feature for every
@@ -197,6 +197,7 @@ tenant specific apps. Complete instructions can be found at
 
 
 
+.. _django-tenant-schemas: https://github.com/bernardopires/django-tenant-schemas
 .. _django: https://www.djangoproject.com/
 .. _PostgreSQL schemas: http://www.postgresql.org/docs/9.1/static/ddl-schemas.html
 .. _PostgreSQL's official documentation on schemas: http://www.postgresql.org/docs/9.1/static/ddl-schemas.html

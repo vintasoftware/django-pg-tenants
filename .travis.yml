@@ -4,6 +4,8 @@ cache: pip
 python:
   - 3.6
   - 3.7
+  - 3.8
+  - 3.9
 
 matrix:
   fast_finish: true
@@ -12,7 +14,7 @@ services:
   - postgresql
 
 addons:
-  postgresql: "9.6"
+  postgresql: "12.7"
 
 install:
   - pip install -q tox-travis
@@ -24,11 +26,9 @@ script:
   - tox
 
 env:
-  - DJANGO=1.11
-  - DJANGO=2.0
-  - DJANGO=2.1
   - DJANGO=2.2
-  - DJANGO=3.0
+  - DJANGO=3.1
+  - DJANGO=3.2
 
 deploy:
   provider: pypi
@@ -40,3 +40,4 @@ deploy:
     repo: vintasoftware/django-pg-tenants
     tags: true
     skip_existing: true
+    skip_cleanup: true
