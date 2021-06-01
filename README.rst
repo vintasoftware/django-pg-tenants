@@ -3,7 +3,7 @@ django-pg-tenants
 
 |PyPi version| |PyPi downloads| |Python versions| |Travis CI| |PostgreSQL|
 
-This is a fork of [django-tenant-schemas](https://github.com/bernardopires/django-tenant-schemas).
+This is a fork of `django-tenant-schemas`_.
 
 This application enables `django`_ powered websites to have multiple
 tenants via `PostgreSQL schemas`_. A vital feature for every
@@ -197,6 +197,7 @@ tenant specific apps. Complete instructions can be found at
 
 
 
+.. _django-tenant-schemas: https://github.com/bernardopires/django-tenant-schemas
 .. _django: https://www.djangoproject.com/
 .. _PostgreSQL schemas: http://www.postgresql.org/docs/9.1/static/ddl-schemas.html
 .. _PostgreSQL's official documentation on schemas: http://www.postgresql.org/docs/9.1/static/ddl-schemas.html
@@ -209,6 +210,6 @@ tenant specific apps. Complete instructions can be found at
 .. |Python versions| image:: https://img.shields.io/pypi/pyversions/django-pg-tenants.svg
 .. |Travis CI| image:: https://travis-ci.org/vintasoftware/django-pg-tenants.svg?branch=master
    :target: https://travis-ci.org/vintasoftware/django-pg-tenants
-.. |PostgreSQL| image:: https://img.shields.io/badge/PostgreSQL-9.2%2C%209.3%2C%209.4%2C%209.5%2C%209.6-blue.svg
+.. |PostgreSQL| image:: https://img.shields.io/badge/PostgreSQL-12.7-blue.svg
 .. _setup: https://django-pg-tenants.readthedocs.io/en/latest/install.html
 .. _django-pg-tenants.readthedocs.io: https://django-pg-tenants.readthedocs.io/en/latest/
